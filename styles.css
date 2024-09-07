@@ -1,0 +1,55 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    padding-top: 40px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.calculator {
+    display: grid;
+    width: fit-content;
+    border: 1px solid black;
+    margin: 0 auto;
+    grid-template-columns: repeat(4, 70px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 50px);
+}
+
+.calculator > button {
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+}
+
+.calculator > button:hover {
+    background-color: rgba(192, 192, 192, 0.9);
+}
+
+#equals {
+    grid-column: span 2;
+}
+
+.calculation-result {
+    grid-column: 1 / -1;
+    background-color: black;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.calculation-result #previous-operand {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1rem;
+}
+
+.calculation-result #current-operand {
+    color: white;
+    font-size: 1.2rem;
+}
