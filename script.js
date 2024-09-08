@@ -30,6 +30,10 @@ class Calculator {
     }
 
     setOperation(operation) {
+        if (this.previousOperand && !this.currentOperand && this.operation) {
+            this.operation = operation;
+            return;
+        }
         if (this.currentOperand === "") {
             this.previousOperand = "0";
             this.operation = operation;
